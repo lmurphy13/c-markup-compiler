@@ -1,0 +1,23 @@
+         <document> := <statement-list> <statement>
+   <statement-list> := ( <statement> )*
+        <statement> := <normal-text>
+                     | <heading-1>
+                     | <heading-2>
+                     | <heading-3>
+                     | <ordered-list>
+                     | <unordered-list>
+      <normal-text> := <string>
+        <heading-1> := "#" <normal-text>
+        <heading-2> := "#" "#" <normal-text>
+        <heading-3> := "#" "#" "#" <normal-text>
+     <ordered-list> := <integer> "." <space> <normal-text>
+   <unordered-list> := "-" <space> <normal-text>
+           <string> := ( <character> )+ <newline> <newline>
+          <integer> := ( <digit> )+
+        <character> := [a-zA-Z]
+                     | <digit>
+                     | <space>
+                     | [,./?~`!@#$%^&*()-_+={}[]|\:;"']
+            <digit> := [0-9]
+            <space> := " "
+          <newline> := "\n"
